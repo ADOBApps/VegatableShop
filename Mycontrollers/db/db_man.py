@@ -91,7 +91,7 @@ class DBMan:
 		
 		conn.commit()
 		conn.close()
-		print(data)
+		#print(data)
 		#Retorna una lista, los elementos de esta son tuplas
 		return data
 
@@ -109,7 +109,7 @@ class DBMan:
 		
 		conn.commit()
 		conn.close()
-		print(data)
+		#print(data)
 		#Retorna una lista, los elementos de esta son tuplas
 		return data
 
@@ -126,7 +126,7 @@ class DBMan:
 		
 		conn.commit()
 		conn.close()
-		print(data)
+		#print(data)
 		#Retorna una lista, los elementos de esta son tuplas
 		return data
 
@@ -143,7 +143,7 @@ class DBMan:
 		
 		conn.commit()
 		conn.close()
-		print(data)
+		#print(data)
 		#Retorna una lista, los elementos de esta son tuplas
 		return data
 
@@ -214,7 +214,6 @@ class DBMan:
 			print(f"No se pudo leer los datos de la tabla '{table}'")
 		conn.commit()
 		conn.close()
-
 		#Retorna una lista, los elementos de esta son tuplas
 		return data
 
