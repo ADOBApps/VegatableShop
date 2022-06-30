@@ -91,7 +91,7 @@ class DBMan:
 		
 		conn.commit()
 		conn.close()
-		#print(data)
+
 		#Retorna una lista, los elementos de esta son tuplas
 		return data
 
@@ -169,10 +169,14 @@ class DBMan:
 
 		try:
 			cursor.execute(inst)
+			conn.commit()
+			conn.close()
+			return True
 		except:
 			print(f"No se pudo borrar {item} de la tabla '{table}'")
-		conn.commit()
-		conn.close()
+			conn.commit()
+			conn.close()
+			return False
 
 	#Create categories
 	def createCategory(self, db, table):
@@ -199,6 +203,22 @@ class DBMan:
 			print(f"No se pudo insertar el dato en la tabla '{table}'")
 		conn.commit()
 		conn.close()
+
+	#Insert into carrito
+	def insertProduct(self, db, table, name, price, mytype):
+		conn = sql.connect(db)
+		cursor = conn.cursor()
+		inst = f"INSERT INTO '{table}' VALUES ('{name}', {price}, '{mytype}')"
+		try:
+			cursor.execute(inst)
+			conn.commit()
+			conn.close()
+			return True
+		except:
+			print(f"No se pudo insertar el dato en la tabla '{table}'")
+			conn.commit()
+			conn.close()
+			return False
 
 	#Get data info
 	def getVegetables(self, db, table):
