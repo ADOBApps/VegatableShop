@@ -8,8 +8,8 @@ Created on 21/06/2022
 import tkinter as tk
 import tkinter.ttk as ttk
 
-from Mycontrollers.db.db_man import DBMan
-from Myviews.gui.windows import Windows
+from mycontrollers.db.db_man import DBMan
+from myviews.gui.windows import Windows
 
 
 # Crea la base de datos de verduras por completo si no existe
